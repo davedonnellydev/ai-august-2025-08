@@ -1,11 +1,11 @@
-# Project [00] #AIAugustAppADay: [Project name]
+# Project 08 #AIAugustAppADay: Fake News Detector
 
-![Last Commit](https://img.shields.io/github/last-commit/davedonnellydev/ai-august-2025-XX)
+![Last Commit](https://img.shields.io/github/last-commit/davedonnellydev/ai-august-2025-08)
 
-**📆 Date**: XX/Aug/2025  
-**🎯 Project Objective**: *[Write up any project objectives here]*  
-**🚀 Features**: *[Main features for MVP]*  
-**🛠️ Tech used**: *[Main tech used, including links to libraries/APIs]*  
+**📆 Date**: 12/Aug/2025  
+**🎯 Project Objective**: Paste a news article, get an AI’s “fake or not” prediction with justification.  
+**🚀 Features**: Paste article; AI checks reliability, returns verdict/explanation. Includes sources for justification.  
+**🛠️ Tech used**: Next.js, TypeScript, OpenAI API  
 **▶️ Live Demo**: *[https://your-demo-url.com](https://your-demo-url.com)*  
 *(Link will be added after deployment)*  
 
@@ -24,15 +24,15 @@ This project has been built as part of my AI August App-A-Day Challenge. You can
 
 ## 🧪 Testing
 
-![CI](https://github.com/davedonnellydev/ai-august-2025-XX/actions/workflows/npm_test.yml/badge.svg)  
+![CI](https://github.com/davedonnellydev/ai-august-2025-08/actions/workflows/npm_test.yml/badge.svg)  
 *Note: Test suite runs automatically with each push/merge.*
 
 ## Quick Start
 
 1. **Clone and install:**
    ```bash
-   git clone https://github.com/davedonnellydev/ai-august-2025-XX.git
-   cd ai-august-2025-XX
+   git clone https://github.com/davedonnellydev/ai-august-2025-08.git
+   cd ai-august-2025-08
    npm install
    ```
 
@@ -110,5 +110,5 @@ import { Component } from '@/components/Component'; // instead of '../../../comp
 
 
 ## 📜 License
-![GitHub License](https://img.shields.io/github/license/davedonnellydev/ai-august-2025-XX)  
+![GitHub License](https://img.shields.io/github/license/davedonnellydev/ai-august-2025-08)  
 This project is licensed under the MIT License.  
