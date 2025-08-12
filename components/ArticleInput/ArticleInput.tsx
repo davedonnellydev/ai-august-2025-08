@@ -87,8 +87,14 @@ export function ArticleInput() {
       }
 
       const analysisResult = await analysisResponse.json();
+      console.log('Analysis result:', analysisResult);
+
+      if (!analysisResult.response) {
+        throw new Error('No response data received from analysis API');
+      }
+
       setResponse(JSON.stringify(analysisResult.response, null, 2));
-      console.log(analysisResult);
+      console.log('Parsed response:', analysisResult.response);
       // Update remaining requests after successful analysis
       setRemainingRequests(ClientRateLimiter.getRemainingRequests());
 
@@ -194,10 +200,28 @@ export function ArticleInput() {
                   ? (() => {
                       try {
                         const parsedData = JSON.parse(response);
+                        if (!parsedData.article) {
+                          return (
+                            <Text c="red">
+                              Error: No article data in analysis results
+                            </Text>
+                          );
+                        }
                         return <ArticleVerdict data={parsedData.article} />;
                       } catch (error) {
+                        console.error(
+                          'JSON parse error:',
+                          error,
+                          'Response:',
+                          response
+                        );
                         return (
-                          <Text c="red">Error parsing analysis results</Text>
+                          <Text c="red">
+                            Error parsing analysis results:{' '}
+                            {error instanceof Error
+                              ? error.message
+                              : 'Unknown error'}
+                          </Text>
                         );
                       }
                     })()
@@ -214,12 +238,28 @@ export function ArticleInput() {
                 {(() => {
                   try {
                     const parsedData = JSON.parse(response);
+                    if (!parsedData.assessments) {
+                      return (
+                        <Text c="red" ta="center">
+                          Error: No assessments data in analysis results
+                        </Text>
+                      );
+                    }
                     return <ArticleAnalysisDisplay data={parsedData} />;
                   } catch (error) {
+                    console.error(
+                      'JSON parse error in analysis display:',
+                      error,
+                      'Response:',
+                      response
+                    );
                     return (
                       <div>
                         <Text c="red" mb="md" ta="center">
-                          Error parsing analysis results
+                          Error parsing analysis results:{' '}
+                          {error instanceof Error
+                            ? error.message
+                            : 'Unknown error'}
                         </Text>
                         <pre
                           style={{

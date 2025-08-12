@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
     if (!apiKey) {
       console.error('OpenAI API key not configured');
       return NextResponse.json(
-        { error: 'Translation service temporarily unavailable' },
+        { error: 'AI analysis service temporarily unavailable' },
         { status: 500 }
       );
     }
@@ -210,12 +210,15 @@ export async function POST(request: NextRequest) {
       throw new Error(`Responses API error: ${response.status}`);
     }
 
+    console.log('API response output_parsed:', response.output_parsed);
+
     return NextResponse.json({
       response: response.output_parsed,
       originalInput: input,
       remainingRequests: ServerRateLimiter.getRemaining(ip),
     });
   } catch (error) {
+    console.error('OpenAI API error:', error);
     const errorMessage =
       error instanceof Error ? error.message : 'OpenAI failed';
     return NextResponse.json({ error: errorMessage }, { status: 500 });
