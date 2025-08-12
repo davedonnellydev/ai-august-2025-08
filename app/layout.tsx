@@ -10,7 +10,8 @@ import { theme } from '../theme';
 
 export const metadata = {
   title: 'Fake News Detector',
-  description: 'An AI powered Fake News Detector app built for AIAugust App a Day Challenge',
+  description:
+    'An AI powered Fake News Detector app built for AIAugust App a Day Challenge',
 };
 
 export default function RootLayout({ children }: { children: any }) {

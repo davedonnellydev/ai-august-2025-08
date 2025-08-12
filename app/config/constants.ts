@@ -46,4 +46,4 @@ Return JSON only.
 - Are numbers, dates, places preserved when present?
 - Are attributions framed as claims about **who said what, when/where**?
 - Are there 5-20 claims (or fewer if article is short) with **importance** prioritized?
-- Is the JSON valid and nothing else printed?`
+- Is the JSON valid and nothing else printed?`;

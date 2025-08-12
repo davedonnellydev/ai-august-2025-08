@@ -127,8 +127,17 @@ export function ArticleInput() {
         )}
 
         {extractedArticle && (
-          <div style={{ margin: '20px 0', padding: '20px', border: '1px solid #ddd', borderRadius: '8px' }}>
-            <Title order={3} mb="md">Extracted Article</Title>
+          <div
+            style={{
+              margin: '20px 0',
+              padding: '20px',
+              border: '1px solid #ddd',
+              borderRadius: '8px',
+            }}
+          >
+            <Title order={3} mb="md">
+              Extracted Article
+            </Title>
             <Text size="sm" c="dimmed" mb="xs">
               <strong>Title:</strong> {extractedArticle.title}
             </Text>
@@ -152,18 +161,29 @@ export function ArticleInput() {
         )}
 
         {response && (
-          <div style={{ margin: '20px 0', padding: '20px', border: '1px solid #ddd', borderRadius: '8px' }}>
-            <Title order={3} mb="md">AI Analysis Results</Title>
-            <pre style={{ 
-              whiteSpace: 'pre-wrap', 
-              wordBreak: 'break-word',
-              fontSize: '12px',
-              backgroundColor: '#f5f5f5',
-              padding: '10px',
-              borderRadius: '4px',
-              overflow: 'auto',
-              maxHeight: '400px'
-            }}>
+          <div
+            style={{
+              margin: '20px 0',
+              padding: '20px',
+              border: '1px solid #ddd',
+              borderRadius: '8px',
+            }}
+          >
+            <Title order={3} mb="md">
+              AI Analysis Results
+            </Title>
+            <pre
+              style={{
+                whiteSpace: 'pre-wrap',
+                wordBreak: 'break-word',
+                fontSize: '12px',
+                backgroundColor: '#f5f5f5',
+                padding: '10px',
+                borderRadius: '4px',
+                overflow: 'auto',
+                maxHeight: '400px',
+              }}
+            >
               {response}
             </pre>
           </div>
