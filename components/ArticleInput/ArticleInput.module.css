@@ -7,4 +7,24 @@
   @media (max-width: var(--mantine-breakpoint-md)) {
     font-size: rem(50px);
   }
+
+  @media (max-width: var(--mantine-breakpoint-sm)) {
+    font-size: rem(40px);
+  }
+}
+
+.inputSection {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  padding: 0 var(--mantine-spacing-md);
+}
+
+.resultsContainer {
+  margin-top: 2rem;
+}
+
+@media (max-width: var(--mantine-breakpoint-sm)) {
+  .inputSection {
+    padding: 0 var(--mantine-spacing-sm);
+  }
 }

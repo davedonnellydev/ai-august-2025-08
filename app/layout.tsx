@@ -22,11 +22,21 @@ export default function RootLayout({ children }: { children: any }) {
         <link rel="shortcut icon" href="/favicon.svg" />
         <meta
           name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
+          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        />
+        <meta
+          name="description"
+          content="AI-powered fake news detector that analyzes articles for credibility and provides detailed fact-checking results"
+        />
+        <meta
+          name="keywords"
+          content="fake news, fact checking, AI, news analysis, credibility"
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <MantineProvider theme={theme}>
+          <main role="main">{children}</main>
+        </MantineProvider>
       </body>
     </html>
   );

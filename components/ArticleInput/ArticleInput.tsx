@@ -1,9 +1,20 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { Button, Text, TextInput, Title } from '@mantine/core';
+import { useEffect, useState, useRef } from 'react';
+import {
+  Button,
+  Text,
+  TextInput,
+  Title,
+  Group,
+  Grid,
+  Container,
+} from '@mantine/core';
 import { ClientRateLimiter } from '@/app/lib/utils/api-helpers';
 import { ArticleAnalysisDisplay } from '../ArticleAnalysisDisplay/ArticleAnalysisDisplay';
+import { ArticleExtractSummary } from '../ArticleExtractSummary/ArticleExtractSummary';
+import { ArticleVerdict } from '../ArticleVerdict/ArticleVerdict';
+import { LoadingSpinner } from '../LoadingSpinner/LoadingSpinner';
 import classes from './ArticleInput.module.css';
 
 export function ArticleInput() {
@@ -13,6 +24,8 @@ export function ArticleInput() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [remainingRequests, setRemainingRequests] = useState(0);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const resultsRef = useRef<HTMLDivElement>(null);
 
   // Update remaining requests on component mount and after translations
   useEffect(() => {
@@ -22,6 +35,7 @@ export function ArticleInput() {
   const handleRequest = async () => {
     if (!input.trim()) {
       setError('Please enter an article url to check');
+      inputRef.current?.focus();
       return;
     }
 
@@ -54,7 +68,6 @@ export function ArticleInput() {
 
       const extractResult = await extractResponse.json();
       setExtractedArticle(extractResult.data);
-      console.log('Extracted article:', extractResult.data);
 
       // Now send the extracted content to OpenAI for analysis
       const analysisResponse = await fetch('/api/openai/responses', {
@@ -75,9 +88,14 @@ export function ArticleInput() {
 
       const analysisResult = await analysisResponse.json();
       setResponse(JSON.stringify(analysisResult.response, null, 2));
-
+      console.log(analysisResult);
       // Update remaining requests after successful analysis
       setRemainingRequests(ClientRateLimiter.getRemainingRequests());
+
+      // Focus on results for screen readers
+      setTimeout(() => {
+        resultsRef.current?.focus();
+      }, 100);
     } catch (err) {
       console.error('API error:', err);
       setError(err instanceof Error ? err.message : 'API failed');
@@ -95,117 +113,147 @@ export function ArticleInput() {
 
   return (
     <>
-      <Title className={classes.title} ta="center" mt={100}>
+      <Title className={classes.title} ta="center" mt={{ base: 60, md: 100 }}>
         Fake News Detector
       </Title>
 
-      <div style={{ maxWidth: 600, margin: '20px auto', padding: '20px' }}>
-        <TextInput
-          value={input}
-          onChange={(event) => setInput(event.currentTarget.value)}
-          size="md"
-          radius="md"
-          label="Article URL:"
-          placeholder="https://www.fakenews.com/article/123"
-        />
-
-        <Button
-          variant="filled"
-          color="cyan"
-          onClick={() => handleRequest()}
-          loading={isLoading}
-        >
-          Check Article
-        </Button>
-        <Button variant="light" color="cyan" onClick={() => handleReset()}>
-          Reset
-        </Button>
-
-        {error && (
-          <Text c="red" ta="center" size="lg" maw={580} mx="auto" mt="xl">
-            Error: {error}
-          </Text>
-        )}
-
-        {extractedArticle && (
-          <div
-            style={{
-              margin: '20px 0',
-              padding: '20px',
-              border: '1px solid #ddd',
-              borderRadius: '8px',
-            }}
-          >
-            <Title order={3} mb="md">
-              Extracted Article
-            </Title>
-            <Text size="sm" c="dimmed" mb="xs">
-              <strong>Title:</strong> {extractedArticle.title}
-            </Text>
-            {extractedArticle.author && (
-              <Text size="sm" c="dimmed" mb="xs">
-                <strong>Author:</strong> {extractedArticle.author}
-              </Text>
-            )}
-            {extractedArticle.publishDate && (
-              <Text size="sm" c="dimmed" mb="xs">
-                <strong>Published:</strong> {extractedArticle.publishDate}
-              </Text>
-            )}
-            <Text size="sm" c="dimmed" mb="xs">
-              <strong>Length:</strong> {extractedArticle.length} characters
-            </Text>
-            <Text size="sm" c="dimmed" mb="xs">
-              <strong>Excerpt:</strong> {extractedArticle.excerpt}
-            </Text>
-          </div>
-        )}
-
-        {response && (
-          <div
-            style={{
-              margin: '20px 0',
-              padding: '20px',
-              border: '1px solid #ddd',
-              borderRadius: '8px',
-            }}
-          >
-            <Title order={3} mb="md">
-              AI Analysis Results
-            </Title>
-            {(() => {
-              try {
-                const parsedData = JSON.parse(response);
-                return <ArticleAnalysisDisplay data={parsedData} />;
-              } catch (error) {
-                return (
-                  <div>
-                    <Text c="red" mb="md">
-                      Error parsing analysis results
-                    </Text>
-                    <pre
-                      style={{
-                        whiteSpace: 'pre-wrap',
-                        wordBreak: 'break-word',
-                        fontSize: '12px',
-                        backgroundColor: '#f5f5f5',
-                        padding: '10px',
-                        borderRadius: '4px',
-                        overflow: 'auto',
-                        maxHeight: '400px',
-                      }}
-                    >
-                      {response}
-                    </pre>
-                  </div>
-                );
+      <Container size="xl" mt="xl" px={{ base: 'md', md: 'xl' }}>
+        {/* Input Section */}
+        <div className={classes.inputSection}>
+          <TextInput
+            ref={inputRef}
+            value={input}
+            onChange={(event) => setInput(event.currentTarget.value)}
+            size="md"
+            radius="md"
+            label="Article URL:"
+            placeholder="https://www.fakenews.com/article/123"
+            mb="md"
+            aria-label="Enter the URL of the article you want to analyze"
+            aria-describedby="url-help"
+            aria-required="true"
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' && !isLoading) {
+                handleRequest();
               }
-            })()}
+            }}
+          />
+          <Text id="url-help" size="xs" c="dimmed" mb="md">
+            Paste the full URL of a news article to analyze its credibility
+          </Text>
+
+          <Group gap="md" wrap="wrap">
+            <Button
+              variant="filled"
+              color="cyan"
+              onClick={() => handleRequest()}
+              loading={isLoading}
+              aria-label="Analyze the article for fake news detection"
+              disabled={!input.trim()}
+            >
+              Check Article
+            </Button>
+            <Button
+              variant="light"
+              color="cyan"
+              onClick={() => handleReset()}
+              aria-label="Clear the form and reset all results"
+            >
+              Reset
+            </Button>
+          </Group>
+
+          {error && (
+            <Text c="red" ta="center" size="lg" mt="xl">
+              Error: {error}
+            </Text>
+          )}
+        </div>
+
+        {/* Loading State - Show during extraction */}
+        {isLoading && !extractedArticle && (
+          <LoadingSpinner message="Extracting article content..." />
+        )}
+
+        {/* Loading State - Show during analysis */}
+        {isLoading && extractedArticle && (
+          <LoadingSpinner message="Analyzing article..." />
+        )}
+
+        {/* Results Section */}
+        {extractedArticle && (
+          <div ref={resultsRef} tabIndex={-1} aria-label="Analysis results">
+            {/* Top Row: Article Summary and Verdict */}
+            <Grid gutter={{ base: 'md', md: 'lg' }} mb="xl">
+              <Grid.Col span={{ base: 12, lg: 6 }}>
+                <ArticleExtractSummary data={extractedArticle} />
+              </Grid.Col>
+
+              <Grid.Col span={{ base: 12, lg: 6 }}>
+                {response
+                  ? (() => {
+                      try {
+                        const parsedData = JSON.parse(response);
+                        return <ArticleVerdict data={parsedData.article} />;
+                      } catch (error) {
+                        return (
+                          <Text c="red">Error parsing analysis results</Text>
+                        );
+                      }
+                    })()
+                  : null}
+              </Grid.Col>
+            </Grid>
+
+            {/* Bottom Section: Detailed Claims Analysis */}
+            {response && (
+              <div role="region" aria-label="Detailed claims analysis results">
+                <Title order={3} mb="lg" ta="center">
+                  Detailed Claims Analysis
+                </Title>
+                {(() => {
+                  try {
+                    const parsedData = JSON.parse(response);
+                    return <ArticleAnalysisDisplay data={parsedData} />;
+                  } catch (error) {
+                    return (
+                      <div>
+                        <Text c="red" mb="md" ta="center">
+                          Error parsing analysis results
+                        </Text>
+                        <pre
+                          style={{
+                            whiteSpace: 'pre-wrap',
+                            wordBreak: 'break-word',
+                            fontSize: '12px',
+                            backgroundColor: '#f5f5f5',
+                            padding: '10px',
+                            borderRadius: '4px',
+                            overflow: 'auto',
+                            maxHeight: '400px',
+                          }}
+                        >
+                          {response}
+                        </pre>
+                      </div>
+                    );
+                  }
+                })()}
+              </div>
+            )}
           </div>
         )}
-      </div>
+      </Container>
 
-      <Text c="dimmed" ta="center" size="sm" maw={580} mx="auto" mt="xl">
+      <Text
+        c="dimmed"
+        ta="center"
+        size="sm"
+        maw={580}
+        mx="auto"
+        mt="xl"
+        px="md"
+      >
         You have {remainingRequests} article checks remaining.
       </Text>
     </>
