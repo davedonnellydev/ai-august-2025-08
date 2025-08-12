@@ -1,98 +1,101 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:141.0) Gecko/20100101 Firefox/141.0" version="28.0.9">
   <diagram name="Page-1" id="htwtzprsXOJnxyGZrqSJ">
-    <mxGraphModel dx="1376" dy="774" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1376" dy="799" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-1" value="MVP" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;fontStyle=1;fontSize=22;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-1" value="MVP" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;fontStyle=1;fontSize=22;" parent="1" vertex="1">
           <mxGeometry x="40" y="70" width="760" height="210" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-2" value="Stretch goals" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=bottom;fontStyle=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-2" value="Stretch goals" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=bottom;fontStyle=1;fontSize=22;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
           <mxGeometry x="40" y="280" width="760" height="160" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HkYOoMQ7B2AW6pbmIgEl-3" target="HkYOoMQ7B2AW6pbmIgEl-4">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="HkYOoMQ7B2AW6pbmIgEl-3" target="HkYOoMQ7B2AW6pbmIgEl-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-3" value="User enters url of article" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="90" y="160" width="120" height="60" as="geometry" />
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-3" value="User enters url of article" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="50" y="160" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HkYOoMQ7B2AW6pbmIgEl-4" target="HkYOoMQ7B2AW6pbmIgEl-6">
+        <mxCell id="57CWroVx8vsXML5eSCYU-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HkYOoMQ7B2AW6pbmIgEl-4" target="57CWroVx8vsXML5eSCYU-1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-4" value="AI reads article" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
-          <mxGeometry x="270" y="160" width="120" height="60" as="geometry" />
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-4" value="AI extracts between 5-20 factual claims from the article" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="210" y="160" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HkYOoMQ7B2AW6pbmIgEl-6" target="HkYOoMQ7B2AW6pbmIgEl-8">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="HkYOoMQ7B2AW6pbmIgEl-6" target="HkYOoMQ7B2AW6pbmIgEl-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HkYOoMQ7B2AW6pbmIgEl-6" target="HkYOoMQ7B2AW6pbmIgEl-11">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="HkYOoMQ7B2AW6pbmIgEl-6" target="HkYOoMQ7B2AW6pbmIgEl-11" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-6" value="AI uses reasoning model to determine whether or not it is &#39;fake news&#39;" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
-          <mxGeometry x="450" y="160" width="120" height="60" as="geometry" />
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-6" value="AI assesses each claim &amp;amp; maps with evidence" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="505" y="160" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-8" value="AI gives a &#39;fake news&#39; score and gives reasoning with sources" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
-          <mxGeometry x="630" y="160" width="120" height="60" as="geometry" />
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-8" value="AI gives a &#39;fake news&#39; score as aggregate of claims and gives reasoning with sources" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="670" y="150" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-11" value="AI displays reasoning summary to the user as it develops it&#39;s reasoning" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="450" y="300" width="120" height="60" as="geometry" />
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-11" value="AI displays reasoning summary to the user as it develops it&#39;s reasoning" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="505" y="300" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-14" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-14" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="40" y="520" width="760" height="260" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-15" value="https://www.fakenews.com/article/1234" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-15" value="https://www.fakenews.com/article/1234" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="220" y="620" width="340" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-17" value="Fake News Detector" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=18;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-17" value="Fake News Detector" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=18;" parent="1" vertex="1">
           <mxGeometry x="315" y="550" width="220" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-18" value="Enter article URL:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-18" value="Enter article URL:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="220" y="590" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-19" value="Go" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-19" value="Go" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="580" y="620" width="80" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-20" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-20" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="40" y="850" width="760" height="630" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-21" value="https://www.fakenews.com/article/1234" style="rounded=1;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-21" value="https://www.fakenews.com/article/1234" style="rounded=1;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="318" y="970" width="215" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-22" value="Fake News Detector" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=18;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-22" value="Fake News Detector" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=18;" parent="1" vertex="1">
           <mxGeometry x="315" y="880" width="220" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-25" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-25" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="110" y="1070" width="630" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-26" value="93%" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=26;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-26" value="93%" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1;fontSize=26;" parent="1" vertex="1">
           <mxGeometry x="600" y="930" width="120" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-27" value="Final score:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-27" value="Final score:" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="600" y="910" width="90" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-28" value="Certainty of fake news" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-28" value="Certainty of fake news" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="625" y="992" width="70" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-29" value="" style="rounded=1;whiteSpace=wrap;html=1;align=left;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-29" value="" style="rounded=1;whiteSpace=wrap;html=1;align=left;fontStyle=1" parent="1" vertex="1">
           <mxGeometry x="110" y="1070" width="630" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-30" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Reasoning summary&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-30" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Reasoning summary&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="120" y="1080" width="610" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-31" value="" style="html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.down;strokeColor=#0080f0;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-31" value="" style="html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=2;shape=mxgraph.ios7.misc.down;strokeColor=#0080f0;" parent="1" vertex="1">
           <mxGeometry x="712" y="1094" width="12" height="6" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-32" value="" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-32" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="110" y="1240" width="630" height="220" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-33" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Final Verdict&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-33" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Final Verdict&lt;/h1&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="135" y="1260" width="585" height="120" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-34" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.link;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-34" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.link;" parent="1" vertex="1">
           <mxGeometry x="135" y="1360" width="10" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-35" value="Source" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="HkYOoMQ7B2AW6pbmIgEl-35" value="Source" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="150" y="1350" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="57CWroVx8vsXML5eSCYU-1" value="AI uses internet search to find evidence of claims" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="160" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
