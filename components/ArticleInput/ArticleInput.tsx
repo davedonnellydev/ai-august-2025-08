@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Button, Text, TextInput, Title } from '@mantine/core';
 import { ClientRateLimiter } from '@/app/lib/utils/api-helpers';
+import { ArticleAnalysisDisplay } from '../ArticleAnalysisDisplay/ArticleAnalysisDisplay';
 import classes from './ArticleInput.module.css';
 
 export function ArticleInput() {
@@ -172,20 +173,34 @@ export function ArticleInput() {
             <Title order={3} mb="md">
               AI Analysis Results
             </Title>
-            <pre
-              style={{
-                whiteSpace: 'pre-wrap',
-                wordBreak: 'break-word',
-                fontSize: '12px',
-                backgroundColor: '#f5f5f5',
-                padding: '10px',
-                borderRadius: '4px',
-                overflow: 'auto',
-                maxHeight: '400px',
-              }}
-            >
-              {response}
-            </pre>
+            {(() => {
+              try {
+                const parsedData = JSON.parse(response);
+                return <ArticleAnalysisDisplay data={parsedData} />;
+              } catch (error) {
+                return (
+                  <div>
+                    <Text c="red" mb="md">
+                      Error parsing analysis results
+                    </Text>
+                    <pre
+                      style={{
+                        whiteSpace: 'pre-wrap',
+                        wordBreak: 'break-word',
+                        fontSize: '12px',
+                        backgroundColor: '#f5f5f5',
+                        padding: '10px',
+                        borderRadius: '4px',
+                        overflow: 'auto',
+                        maxHeight: '400px',
+                      }}
+                    >
+                      {response}
+                    </pre>
+                  </div>
+                );
+              }
+            })()}
           </div>
         )}
       </div>
