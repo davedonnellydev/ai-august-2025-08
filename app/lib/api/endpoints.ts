@@ -1,7 +1,7 @@
 import { ApiClient } from './client';
 
 // Create API client instance
-const apiClient = new ApiClient('/api/proxy');
+const apiClient = new ApiClient('/api');
 
 // Example user API endpoints (ready for future use)
 export const userApi = {

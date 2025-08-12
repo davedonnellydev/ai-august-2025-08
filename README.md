@@ -25,7 +25,7 @@ This project has been built as part of my AI August App-A-Day Challenge. You can
 ## 🧪 Testing
 
 ![CI](https://github.com/davedonnellydev/ai-august-2025-08/actions/workflows/npm_test.yml/badge.svg)  
-*Note: Test suite runs automatically with each push/merge.*
+*Note: Test suite runs automatically with each push/merge.*  
 
 ## Quick Start
 
@@ -61,14 +61,6 @@ Create a `.env.local` file in the root directory:
 ```bash
 # OpenAI API (for AI features)
 OPENAI_API_KEY=your_openai_api_key_here
-
-# Optional: External API URLs
-USER_API_URL=https://jsonplaceholder.typicode.com/users
-PRODUCT_API_URL=https://dummyjson.com/products
-
-# Optional: Proxy Settings
-ENABLE_CACHE=true
-CACHE_DURATION=300000
 ```
 
 ### Key Configuration Files

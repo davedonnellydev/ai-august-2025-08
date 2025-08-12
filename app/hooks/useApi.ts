@@ -66,7 +66,7 @@ export function useApi<T>({
       }
 
       const requestFn = async () => {
-        const response = await fetch(`/api/proxy/${endpoint}`, {
+        const response = await fetch(`/api/${endpoint}`, {
           method,
           headers: {
             'Content-Type': 'application/json',

@@ -21,12 +21,3 @@ export interface RequestConfig {
   retries?: number;
   cache?: boolean;
 }
-
-// Proxy configuration
-export interface ProxyConfig {
-  target: string;
-  headers?: Record<string, string>;
-  timeout?: number;
-  retries?: number;
-  cache?: boolean;
-}
