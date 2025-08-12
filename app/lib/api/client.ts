@@ -6,7 +6,11 @@ export class ApiClient {
   private defaultHeaders: Record<string, string>;
   private defaultTimeout: number;
 
-  constructor(baseUrl: string, headers?: Record<string, string>, timeout: number = 10000) {
+  constructor(
+    baseUrl: string,
+    headers?: Record<string, string>,
+    timeout: number = 10000
+  ) {
     this.baseUrl = baseUrl;
     this.defaultHeaders = {
       'Content-Type': 'application/json',
@@ -38,7 +42,9 @@ export class ApiClient {
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.message || `HTTP ${response.status}: ${response.statusText}`);
+        throw new Error(
+          errorData.message || `HTTP ${response.status}: ${response.statusText}`
+        );
       }
 
       return await response.json();
@@ -56,11 +62,18 @@ export class ApiClient {
     }
   }
 
-  async get<T>(endpoint: string, config?: Omit<RequestConfig, 'cache'>): Promise<T> {
+  async get<T>(
+    endpoint: string,
+    config?: Omit<RequestConfig, 'cache'>
+  ): Promise<T> {
     return this.request<T>(endpoint, { method: 'GET', ...config });
   }
 
-  async post<T>(endpoint: string, data?: any, config?: Omit<RequestConfig, 'cache'>): Promise<T> {
+  async post<T>(
+    endpoint: string,
+    data?: any,
+    config?: Omit<RequestConfig, 'cache'>
+  ): Promise<T> {
     return this.request<T>(endpoint, {
       method: 'POST',
       body: data ? JSON.stringify(data) : undefined,
@@ -68,7 +81,11 @@ export class ApiClient {
     });
   }
 
-  async put<T>(endpoint: string, data?: any, config?: Omit<RequestConfig, 'cache'>): Promise<T> {
+  async put<T>(
+    endpoint: string,
+    data?: any,
+    config?: Omit<RequestConfig, 'cache'>
+  ): Promise<T> {
     return this.request<T>(endpoint, {
       method: 'PUT',
       body: data ? JSON.stringify(data) : undefined,
@@ -76,7 +93,10 @@ export class ApiClient {
     });
   }
 
-  async delete<T>(endpoint: string, config?: Omit<RequestConfig, 'cache'>): Promise<T> {
+  async delete<T>(
+    endpoint: string,
+    config?: Omit<RequestConfig, 'cache'>
+  ): Promise<T> {
     return this.request<T>(endpoint, { method: 'DELETE', ...config });
   }
 }

@@ -6,30 +6,31 @@
 **🎯 Project Objective**: Paste a news article, get an AI’s “fake or not” prediction with justification.  
 **🚀 Features**: Paste article; AI checks reliability, returns verdict/explanation. Includes sources for justification.  
 **🛠️ Tech used**: Next.js, TypeScript, OpenAI API  
-**▶️ Live Demo**: *[https://your-demo-url.com](https://your-demo-url.com)*  
-*(Link will be added after deployment)*  
+**▶️ Live Demo**: _[https://your-demo-url.com](https://your-demo-url.com)_  
+_(Link will be added after deployment)_
 
 ## 🗒️ Summary
+
 **Lessons learned**  
-*A little summary of learnings*  
+_A little summary of learnings_
 
 **Blockers**  
-*Note any blockers here*  
+_Note any blockers here_
 
 **Final thoughts**  
-*Any final thoughts here*  
+_Any final thoughts here_
 
-
-This project has been built as part of my AI August App-A-Day Challenge. You can read more information on the full project here: [https://github.com/davedonnellydev/ai-august-2025-challenge](https://github.com/davedonnellydev/ai-august-2025-challenge).  
+This project has been built as part of my AI August App-A-Day Challenge. You can read more information on the full project here: [https://github.com/davedonnellydev/ai-august-2025-challenge](https://github.com/davedonnellydev/ai-august-2025-challenge).
 
 ## 🧪 Testing
 
 ![CI](https://github.com/davedonnellydev/ai-august-2025-08/actions/workflows/npm_test.yml/badge.svg)  
-*Note: Test suite runs automatically with each push/merge.*  
+_Note: Test suite runs automatically with each push/merge._
 
 ## Quick Start
 
 1. **Clone and install:**
+
    ```bash
    git clone https://github.com/davedonnellydev/ai-august-2025-08.git
    cd ai-august-2025-08
@@ -37,12 +38,14 @@ This project has been built as part of my AI August App-A-Day Challenge. You can
    ```
 
 2. **Set up environment variables:**
+
    ```bash
    cp .env.example .env.local
    # Edit .env.local with your values
    ```
 
 3. **Start development:**
+
    ```bash
    npm run dev
    ```
@@ -79,6 +82,7 @@ import { Component } from '@/components/Component'; // instead of '../../../comp
 ```
 
 ## 📦 Available Scripts
+
 ### Build and dev scripts
 
 - `npm run dev` – start dev server
@@ -100,7 +104,7 @@ import { Component } from '@/components/Component'; // instead of '../../../comp
 - `npm run storybook:build` – builds Storybook to `storybook-static`
 - `npm run prettier:write` – formats files with Prettier
 
-
 ## 📜 License
+
 ![GitHub License](https://img.shields.io/github/license/davedonnellydev/ai-august-2025-08)  
-This project is licensed under the MIT License.  
+This project is licensed under the MIT License.
