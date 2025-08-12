@@ -1,5 +1,5 @@
 import { render, screen, userEvent } from '@/test-utils';
-import { Welcome } from './Welcome';
+import { ArticleInput } from './ArticleInput';
 
 // Mock the ClientRateLimiter
 jest.mock('../../app/lib/utils/api-helpers', () => ({
@@ -18,28 +18,29 @@ describe('Welcome component', () => {
   });
 
   it('renders the welcome title', () => {
-    render(<Welcome />);
-    expect(screen.getByText(/Welcome to your/)).toBeInTheDocument();
-    expect(screen.getByText('Starter')).toBeInTheDocument();
+    render(<ArticleInput />);
+    expect(screen.getByText(/Fake News Detector/)).toBeInTheDocument();
   });
 
   it('renders input field and buttons', () => {
-    render(<Welcome />);
-    expect(screen.getByLabelText('Ask a Question')).toBeInTheDocument();
-    expect(screen.getByText('Ask Question')).toBeInTheDocument();
+    render(<ArticleInput />);
+    expect(screen.getByLabelText('Article URL:')).toBeInTheDocument();
+    expect(screen.getByText('Article URL:')).toBeInTheDocument();
     expect(screen.getByText('Reset')).toBeInTheDocument();
   });
 
   it('displays remaining requests count', () => {
-    render(<Welcome />);
-    expect(screen.getByText(/You have \d+ questions remaining/)).toBeInTheDocument();
+    render(<ArticleInput />);
+    expect(
+      screen.getByText(/You have \d+ article checks remaining/)
+    ).toBeInTheDocument();
   });
 
   it('allows user to type in input field', async () => {
     const user = userEvent.setup();
-    render(<Welcome />);
+    render(<ArticleInput />);
 
-    const input = screen.getByLabelText('Ask a Question');
+    const input = screen.getByLabelText('Article URL:');
     await user.type(input, 'Hello world');
 
     expect(input).toHaveValue('Hello world');
@@ -47,19 +48,21 @@ describe('Welcome component', () => {
 
   it('shows error when trying to submit empty input', async () => {
     const user = userEvent.setup();
-    render(<Welcome />);
+    render(<ArticleInput />);
 
-    const submitButton = screen.getByText('Ask Question');
+    const submitButton = screen.getByText('Check Article');
     await user.click(submitButton);
 
-    expect(screen.getByText('Error: Please enter some text to translate')).toBeInTheDocument();
+    expect(
+      screen.getByText('Error: Please enter an article url to check')
+    ).toBeInTheDocument();
   });
 
   it('resets form when reset button is clicked', async () => {
     const user = userEvent.setup();
-    render(<Welcome />);
+    render(<ArticleInput />);
 
-    const input = screen.getByLabelText('Ask a Question');
+    const input = screen.getByLabelText('Article URL:');
     const resetButton = screen.getByText('Reset');
 
     await user.type(input, 'Test input');

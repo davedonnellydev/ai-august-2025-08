@@ -17,7 +17,8 @@ export const productApi = {
   getProducts: () => apiClient.get('/products'),
   getProduct: (id: number) => apiClient.get(`/products/${id}`),
   createProduct: (product: any) => apiClient.post('/products', product),
-  updateProduct: (id: number, product: any) => apiClient.put(`/products/${id}`, product),
+  updateProduct: (id: number, product: any) =>
+    apiClient.put(`/products/${id}`, product),
   deleteProduct: (id: number) => apiClient.delete(`/products/${id}`),
 };
 

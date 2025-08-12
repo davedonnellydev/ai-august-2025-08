@@ -1,9 +1,9 @@
-import { Welcome } from '../components/Welcome/Welcome';
+import { ArticleInput } from '../components/ArticleInput/ArticleInput';
 
 export default function HomePage() {
   return (
     <>
-      <Welcome />
+      <ArticleInput />
     </>
   );
 }

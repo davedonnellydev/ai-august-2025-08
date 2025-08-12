@@ -6,8 +6,8 @@ export async function GET() {
     timestamp: new Date().toISOString(),
     version: '1.0.0',
     services: {
-      proxy: 'operational',
-      cache: 'operational',
+      openai: 'operational',
+      article_extraction: 'operational',
     },
   });
 }
